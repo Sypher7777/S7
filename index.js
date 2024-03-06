@@ -61,6 +61,21 @@
             }
           };
         },
+        /**
+         * @param {number} p1 - Player 1
+         * @param {number} p2 - Player 2
+         * @param {number} p1.x - Player 1's x value
+         * @param {number} p1.y - Player 1's y value
+         * @param {number} p2.x - Player 2's x value
+         * @param {number} p2.y - Player 2's y value
+         * @param {number} p2 - Player 2
+         */
+        calculateDistance: function(p1,p2){
+          let xDiff = (p1.x - p2.x)
+          let yDiff = (p1.y - p2.y)
+          let distance = Math.sqrt((xDiff * xDiff) + (yDiff * yDiff))
+          return distance
+        }
       },
     };
   }(window, window._));
