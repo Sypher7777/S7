@@ -2,7 +2,21 @@
 
 (function(window, _) {
     window.S7 = window.S7 || {
-      numz: {/* other code */},
+      numz: {
+        getAngleDegrees(pointA, pointB){
+          const distanceX = pointB.x - pointA.x
+          const distanceY = pointB.y - pointA.y
+          const radians = Math.atan2(distanceY, distanceX)
+          const degrees = radians * 180 / Math.PI
+          return degrees
+        },
+        degreesToRadians(degrees){
+          return degrees * Math.PI / 180
+        },
+        radiansToDegrees(radians){
+          return radians * 180 / Math.PI
+        }
+      },
       phyz: {
         /**
          * Returns an Object with basic properties utilized in a 
@@ -76,6 +90,7 @@
           let distance = Math.sqrt((xDiff * xDiff) + (yDiff * yDiff))
           return distance
         }
+        
       },
     };
   }(window, window._));
